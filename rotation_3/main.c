@@ -1,10 +1,9 @@
 #include <msp430g2553.h>
 #include <stdio.h>
 
-
 unsigned long int   seed = 1; // global variable
 unsigned long int   lcg_res = 0; // global variable
-unsigned int        time_rot = 20000;
+unsigned long int   time_rot = 20000;
 /*
 ** linear congruential generator
 */
@@ -23,7 +22,7 @@ unsigned long int ft_random()
 void main(void)
 {
     WDTCTL = WDTPW + WDTHOLD;
-    unsigned int count;
+    unsigned long int count;
 
     P1OUT = 0;
     P1DIR = BIT0^BIT6;
